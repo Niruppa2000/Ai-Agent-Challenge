@@ -1,0 +1,8 @@
+langchain
+groq
+pandas
+pdfplumber
+python-dotenv
+langchain-community
+langchain-groq
+langchain-openai

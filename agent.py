@@ -101,7 +101,7 @@ def main(target_bank):
     csv_preview = sample_csv_path.read_text(encoding="utf-8")
 
     for attempt in range(3):
-        print(f"\n🧠 Attempt {attempt+1} to generate parser...")
+        print(f"\n Attempt {attempt+1} to generate parser...")
         code = generate_parser_code(csv_preview, target_bank)
         parser_path = save_parser(code, target_bank)
         if load_and_test_parser(parser_path, sample_pdf_path):

@@ -67,7 +67,7 @@ def save_parser(code, bank_name):
     file_path = output_dir / f"{bank_name.lower()}_parser.py"
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(code)
-    print(f"✅ Saved parser to {file_path}")
+    print(f" Saved parser to {file_path}")
     return file_path
 
 
@@ -77,16 +77,16 @@ def load_and_test_parser(parser_path, sample_pdf_path):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
     except SyntaxError as e:
-        print(f"🛑 Syntax error in parser: {e}")
+        print(f" Syntax error in parser: {e}")
         return False
 
     try:
         df = module.parse(sample_pdf_path)
-        print("✅ Test run successful! Sample output:")
+        print(" Test run successful! Sample output:")
         print(df.head())
         return True
     except Exception as e:
-        print(f"⚠️ Runtime error during parser test: {e}")
+        print(f" Runtime error during parser test: {e}")
         return False
 
 
@@ -95,7 +95,7 @@ def main(target_bank):
     sample_pdf_path = Path("data") / f"{target_bank}.pdf"
 
     if not sample_csv_path.exists() or not sample_pdf_path.exists():
-        print(f"❌ Missing data for target bank: {target_bank}")
+        print(f" Missing data for target bank: {target_bank}")
         return
 
     csv_preview = sample_csv_path.read_text(encoding="utf-8")
@@ -107,7 +107,7 @@ def main(target_bank):
         if load_and_test_parser(parser_path, sample_pdf_path):
             break
     else:
-        print("❌ Failed after 3 attempts.")
+        print(" Failed after 3 attempts.")
 
 
 if __name__ == "__main__":

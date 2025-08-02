@@ -21,4 +21,5 @@ def test_icici_parser():
     print(output)
 
     
-    assert expected.equals(output), "❌ Output doesn't match expected DataFrame"
+
+    assert expected.equals(output), " Output doesn't match expected DataFrame"

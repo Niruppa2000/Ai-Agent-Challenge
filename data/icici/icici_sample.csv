@@ -1,0 +1,6 @@
+Date,Transaction Description,Amount,Balance
+2024-01-01,Salary Credit,50000,50000
+2024-01-03,ATM Withdrawal,-5000,45000
+2024-01-05,Online Shopping,-2000,43000
+2024-01-08,UPI Received,1000,44000
+2024-01-10,Electricity Bill,-1500,42500

@@ -25,7 +25,8 @@ def parse(pdf_path: str) -> pd.DataFrame:
                         transactions.append((date, desc, amount, balance))
 
     df = pd.DataFrame(transactions, columns=['Date', 'Transaction Description', 'Amount', 'Balance'])
-    # ✅ Convert float to int for assertion matching
+    #  Convert float to int for assertion matching
     df['Amount'] = df['Amount'].astype(int)
     df['Balance'] = df['Balance'].astype(int)
+
     return df
